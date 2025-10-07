@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+         table {
+        border: 1px solid black; /* outer border */
+        border-collapse:collapse;
+           }
+        table th,td{
+
+            border:1px solid black;
+            padding: 50px; 
+            
+        }
+        th,td{
+            
+            background-color:white;
+        }
+        img{
+            height:50px;
+            width:50px;
+            
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th></th>
+            <th></th>
+             <th></th>
+        </tr>
+         <tr>
+            <th></th>
+            <th></th>
+             <th></th>
+        </tr>
+         <tr>
+            <th></th>
+            <th></th>
+             <th></th>
+        </tr>
+        </table>
+<script>
+      let cells = document.querySelectorAll("th");
+      let turn=0;
+      for (let i = 0; i < cells.length; i++) {
+      cells[i].addEventListener("click", function() {
+        if(turn%2===0){
+            cells[i].innerHTML= "<img src='./ximg.jpg'>";}
+      else{
+        cells[i].innerHTML= "<img src='./ofile.jpg'>";}
+        turn++;
+
+         if (cells[0].innerHTML.includes("ximg.jpg") && cells[1].innerHTML.includes("ximg.jpg") &&cells[2].innerHTML.includes("ximg.jpg")) {
+        alert("X wins!");}
+        else if (cells[3].innerHTML.includes("ximg.jpg") && cells[4].innerHTML.includes("ximg.jpg") && cells[5].innerHTML.includes("ximg.jpg")) {
+        alert("X wins!");}
+        else if (cells[6].innerHTML.includes("ximg.jpg") &&cells[7].innerHTML.includes("ximg.jpg") &&cells[8].innerHTML.includes("ximg.jpg")) {
+        alert("X wins!");}
+
+         if (cells[0].innerHTML.includes("ofile.jpg") && cells[1].innerHTML.includes("ofile.jpg") &&cells[2].innerHTML.includes("ofile.jpg")) {
+        alert("O wins!");}
+        else if (cells[3].innerHTML.includes("ofile.jpg") &&cells[4].innerHTML.includes("ofile.jpg") &&cells[5].innerHTML.includes("ofile.jpg")) {
+        alert("O wins!");}
+        else if (cells[6].innerHTML.includes("ofile.jpg") && cells[7].innerHTML.includes("ofile.jpg") &&cells[8].innerHTML.includes("ofile.jpg")) {
+        alert("O wins!");}
+
+        if (cells[0].innerHTML.includes("ximg.jpg") &&cells[3].innerHTML.includes("ximg.jpg") &&cells[6].innerHTML.includes("ximg.jpg")) {
+        alert("X wins!");}
+        else if (cells[1].innerHTML.includes("ximg.jpg") &&cells[4].innerHTML.includes("ximg.jpg") &&cells[7].innerHTML.includes("ximg.jpg")) {
+        alert("X wins!");}
+        else if (cells[2].innerHTML.includes("ximg.jpg") &&cells[5].innerHTML.includes("ximg.jpg") &&cells[8].innerHTML.includes("ximg.jpg")) {
+        alert("X wins!");}
+
+        if (cells[0].innerHTML.includes("ofile.jpg") &&cells[3].innerHTML.includes("ofile.jpg") &&cells[6].innerHTML.includes("ofile.jpg")) {
+        alert("O wins!");}
+        else if (cells[1].innerHTML.includes("ofile.jpg") &&cells[4].innerHTML.includes("ofile.jpg") &&cells[7].innerHTML.includes("ofile.jpg")) {
+        alert("O wins!");}
+        else if (cells[2].innerHTML.includes("ofile.jpg") &&cells[5].innerHTML.includes("ofile.jpg") &&cells[8].innerHTML.includes("ofile.jpg")) {
+        alert("O wins!");}
+
+        if (cells[0].innerHTML.includes("ximg.jpg") &&cells[4].innerHTML.includes("ximg.jpg") &&cells[8].innerHTML.includes("ximg.jpg")) {
+         alert("X wins!");
+         }
+
+        if (cells[0].innerHTML.includes("ofile.jpg") &&cells[4].innerHTML.includes("ofile.jpg") &&cells[8].innerHTML.includes("ofile.jpg")) {
+        alert("O wins!");
+        }
+    
+      });}
+        
+
+</script>
+</body>
+</html>
